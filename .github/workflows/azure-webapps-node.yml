@@ -1,0 +1,17 @@
+name: CD
+
+on:
+  push:
+    branches: [ "main" ]
+
+permissions:
+  deployments: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run a multi-line script
+        run: |
+          echo Add other actions to build,
+          echo test, and deploy your project.
