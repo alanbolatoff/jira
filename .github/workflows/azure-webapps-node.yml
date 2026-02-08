@@ -12,15 +12,8 @@ jobs:
 
     permissions:
       deployments: write
-
+      
     steps:
-      - uses: actions/checkout@v4
-
-      - uses: chrnorm/deployment-action@v2
-        name: Create GitHub deployment
+      - name: Deploy to GitHub Pages
         id: deployment
-        with:
-          token: '${{ github.token }}'
-          environment-url: http://my-app-url.com
-          environment: production
-        # more steps below where you run your deployment scripts inside the same action
+        uses: actions/deploy-pages@v4
