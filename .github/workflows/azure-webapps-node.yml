@@ -1,6 +1,6 @@
 name: Deployment
 
-concurrency: production
+concurrency: development
 
 on:
   push:
@@ -10,7 +10,7 @@ on:
 jobs:
   deployment:
     runs-on: ubuntu-latest
-    environment: production
+    environment: development
     steps:
       - name: deploy
         run: |
