@@ -1,19 +1,18 @@
-name: Deploy
+name: Deployment
+
+concurrency: production
 
 on:
   push:
-    branches: [ "main" ]
+    branches:
+      - main
 
 jobs:
-  deploy:
-    name: Deploy my app
-
+  deployment:
     runs-on: ubuntu-latest
-
-    permissions:
-      deployments: write
-      
+    environment: production
     steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: deploy
+        run: |
+          echo Add other actions to build,
+          echo test, and deploy your project.
